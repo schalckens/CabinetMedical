@@ -29,7 +29,7 @@ namespace CabinetMedical.ClassesMetier
             }
             else
             {
-                throw new CabinetMedicalException("Date non conforme");
+                throw new CabinetMedicalException(" Date non conforme ");
             }
 
             this.Intervenant = intervenant;

@@ -28,12 +28,12 @@ namespace CabinetMedical.Exceptions
         {
             var log = new Dictionary<string, string>
             {
-                { "Soins2021", System.Reflection.Assembly.GetExecutingAssembly().GetName().Name.ToString() },
-                { "ClasseException", this.GetType().Name.ToString() },
-                { "DateException", DateTime.Now.ToString() },
-                { "MessageException", this.Message },
-                { "UserException", Environment.UserName },
-                { "UserMachine", Environment.MachineName },
+                { "Soins2021 ", System.Reflection.Assembly.GetExecutingAssembly().GetName().Name.ToString() },
+                { "ClasseException ", this.GetType().Name.ToString() },
+                { "DateException ", DateTime.Now.ToString() },
+                { "MessageException ", this.Message },
+                { "UserException ", Environment.UserName },
+                { "UserMachine ", Environment.MachineName },
             };
 
             // TempException log = new TempException("SoinException", message, Environment.UserName.ToString(), Environment.MachineName.ToString());
