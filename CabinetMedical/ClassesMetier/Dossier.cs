@@ -83,6 +83,20 @@ namespace CabinetMedical.ClassesMetier
         /// <param name="nom">Nom de la personne.</param>
         /// <param name="prenom">Prenom de la personne.</param>
         /// <param name="dateNaissance">Date de naissance de la personne.</param>
+        /// <param name="dateCreation">Date de creation du dossier.</param>
+        /// <param name="prestation">Objet de la classe Prestation.</param>
+        public Dossier(string nom, string prenom, DateTime dateNaissance, DateTime dateCreation, Prestation prestation)
+            : this(nom, prenom, dateNaissance,dateCreation)
+        {
+            this.AjoutePrestation(prestation);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Dossier"/> class.
+        /// </summary>
+        /// <param name="nom">Nom de la personne.</param>
+        /// <param name="prenom">Prenom de la personne.</param>
+        /// <param name="dateNaissance">Date de naissance de la personne.</param>
         /// <param name="prestations">Objet de la classe Prestation.</param>
         public Dossier(string nom, string prenom, DateTime dateNaissance, List<Prestation> prestations)
             : this(nom, prenom, dateNaissance)
