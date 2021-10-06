@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CabinetMedical</name>
+    </assembly>
+    <members>
+        <member name="T:CabinetMedical.ClassesMetier.Dossier">
+            <summary>
+            Classe Dossier.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.#ctor(System.String,System.String,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Dossier"/> class.
+            </summary>
+            <param name="nom">Nom de la personne.</param>
+            <param name="prenom">Prenom de la personne.</param>
+            <param name="dateNaissance">Date de naissance de la personne.</param>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.#ctor(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Dossier"/> class.
+            </summary>
+            <param name="nom">Nom de la personne.</param>
+            <param name="prenom">Prenom de la personne.</param>
+            <param name="dateNaissance">Date de naissance de la personne.</param>
+            <param name="dateCreation">Date de création de la personne.</param>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.#ctor(System.String,System.String,System.DateTime,CabinetMedical.ClassesMetier.Prestation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Dossier"/> class.
+            </summary>
+            <param name="nom">Nom de la personne.</param>
+            <param name="prenom">Prenom de la personne.</param>
+            <param name="dateNaissance">Date de naissance de la personne.</param>
+            <param name="prestation">Objet de la classe Prestation.</param>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.#ctor(System.String,System.String,System.DateTime,System.Collections.Generic.List{CabinetMedical.ClassesMetier.Prestation})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Dossier"/> class.
+            </summary>
+            <param name="nom">Nom de la personne.</param>
+            <param name="prenom">Prenom de la personne.</param>
+            <param name="dateNaissance">Date de naissance de la personne.</param>
+            <param name="prestations">Objet de la classe Prestation.</param>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Dossier.Nom">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Dossier.Prenom">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Dossier.DateNaissance">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Dossier.DateCreation">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Dossier.Prestations">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.AjoutePrestation(CabinetMedical.ClassesMetier.Prestation)">
+            <summary>
+            Ajoute une prestation (objet de la classe Prestation) à la liste d'objet prestations de la classe.
+            </summary>
+            <param name="prestation">Objet de la classe Prestation.</param>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.GetNbPrestationsExternes">
+            <summary>
+            Permet d'obtenir le nombre de Prestations effectué par un intervenant externe.
+            </summary>
+            <returns>Un nombre (Int32).</returns>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.GetNbPrestations">
+            <summary>
+            Permet d'obtenir le nombre de prestation effectuée par un intervenant.
+            </summary>
+            <returns>Un nombre (Int32).</returns>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.GetNbJoursSoinsV1">
+            <summary>
+            Première méthode pour obtenir le nb de jours de prestation.
+            Méthode double boucle.
+            </summary>
+            <returns>Nb jour soins.</returns>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.GetNbJoursSoinsV2">
+            <summary>
+            Deuxième méthode pour obtenir le nb de jours de prestation.
+            Ajout dans une liste viste si pas déjà présente.
+            </summary>
+            <returns>Nb jour soins.</returns>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.GetNbJoursSoinsV3">
+            <summary>
+            Troisième méthode pour obtenir le nb de jours de prestation.
+            Ajout dans une liste viste si pas déjà présente.
+            </summary>
+            <returns>Nb jour soins.</returns>
+        </member>
+        <member name="T:CabinetMedical.ClassesMetier.Intervenant">
+            <summary>
+            Classe Intervenant.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Intervenant.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Intervenant"/> class.
+            </summary>
+            <param name="nom">Nom.</param>
+            <param name="prenom">Prenom.</param>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Intervenant.Nom">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Intervenant.Prenom">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Intervenant.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Intervenant.AjoutePrestation(CabinetMedical.ClassesMetier.Prestation)">
+            <summary>
+            Permet d'Ajouter une prestation à la liste prestations.
+            </summary>
+            <param name="prestation">Objet de la classe Prestation.</param>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Intervenant.GetNbPrestations">
+            <summary>
+            Permet d'obtenir le nombre de prestation.
+            </summary>
+            <returns>Nombre de prestation.</returns>
+        </member>
+        <member name="T:CabinetMedical.ClassesMetier.IntervenantExterne">
+            <summary>
+            Classe IntervenantExterne.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.IntervenantExterne.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.IntervenantExterne"/> class.
+            </summary>
+            <param name="nom">Nom.</param>
+            <param name="prenom">Prenom.</param>
+            <param name="specialite">Spécialité.</param>
+            <param name="adresse">Adresse.</param>
+            <param name="tel">Téléphone.</param>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.IntervenantExterne.Specialite">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.IntervenantExterne.Adresse">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.IntervenantExterne.Tel">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.IntervenantExterne.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:CabinetMedical.ClassesMetier.Prestation">
+            <summary>
+            Classe Prestation.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Prestation.#ctor(System.String,System.DateTime,CabinetMedical.ClassesMetier.Intervenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Prestation"/> class.
+            </summary>
+            <param name="libelle">Libéllé.</param>
+            <param name="dateHeureSoin">Date et heure de la prestation.</param>
+            <param name="intervenant">Objet de la classe Intervenant.</param>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Prestation.Libelle">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Prestation.DateHeureSoin">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Prestation.Intervenant">
+            <summary>
+            Gets.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Prestation.CompareTo(CabinetMedical.ClassesMetier.Prestation,CabinetMedical.ClassesMetier.Prestation)">
+            <summary>
+            Permet de comparer deux date de prestation.
+            </summary>
+            <param name="presta1">Objet de la classe Prestation.</param>
+            <param name="presta2">Un autre objet de la classe Prestation.</param>
+            <returns>Un nombre permettant de savoir si la date est antérieure ou non.</returns>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Prestation.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:CabinetMedical.ClassesMetier.SertAFaireUnTestUnitaire">
+            <summary>
+            Classe permettant d'effectuer un test.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.SertAFaireUnTestUnitaire.SommePourRien(System.Int32,System.Int32)">
+            <summary>
+            Effectue la somme de deux nombres entiers.
+            </summary>
+            <param name="a">entier 1 à additionner.</param>
+            <param name="b">entier 2 à additionner.</param>
+            <returns>la somme des nombres passés en paramètre.</returns>
+        </member>
+        <member name="T:CabinetMedical.Exceptions.CabinetMedicalException">
+            <summary>
+            Classe SoinException hérité de la classe Exception.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.Exceptions.CabinetMedicalException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.Exceptions.CabinetMedicalException"/> class.
+            </summary>
+            <param name="message">Message d'Excpeption.</param>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.CabinetMedicalException.ListEx">
+            <summary>
+            Gets or sets getter et Setter de la liste d'Exception de la classe ExceptionSoin.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.CabinetMedicalException.Message1">
+            <summary>
+            Gets or sets getter et Setter massage Exception.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.Exceptions.CabinetMedicalException.Log">
+            <summary>
+            Méthode pour journalisation des exception de la classe ExceptionSoins.
+            </summary>
+        </member>
+        <member name="T:CabinetMedical.Exceptions.TempException">
+            <summary>
+            Classe TempExcepition qui hérite de la classe Exception.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.Exceptions.TempException.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.Exceptions.TempException"/> class.
+            </summary>
+            <param name="classeException">Classe de l'Exception levée.</param>
+            <param name="messageException">Message de l'Exception levée.</param>
+            <param name="userException">Utilisateur lors de l'Exception.</param>
+            <param name="userMachine">Machine losrs de l'Exception.</param>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.TempException.Application">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.TempException.ClasseException">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.TempException.DateException">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.TempException.MessageException">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.TempException.UserException">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.Exceptions.TempException.UserMachine">
+            <summary>
+            Gets or Sets.
+            </summary>
+        </member>
+    </members>
+</doc>

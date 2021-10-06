@@ -12,7 +12,7 @@ namespace CabinetMedical.ClassesMetier
     /// <summary>
     /// Classe Dossier.
     /// </summary>
-    internal class Dossier
+    public class Dossier
     {
         private DateTime dateNaissance;
         private List<Prestation> prestations;

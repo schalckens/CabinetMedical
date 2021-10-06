@@ -9,7 +9,7 @@ namespace CabinetMedical.ClassesMetier
     /// <summary>
     /// Classe Intervenant.
     /// </summary>
-    internal class Intervenant
+    public class Intervenant
     {
         // Attibuts
         private string nom;

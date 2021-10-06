@@ -4,11 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="ClassesMetier\" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\Roche\TP C# 2a\CabinetMedical\CabinetMedical\CabinetMedical.xml</DocumentationFile>
+  </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>

@@ -10,7 +10,7 @@ namespace CabinetMedical.ClassesMetier
     /// <summary>
     /// Classe Prestation.
     /// </summary>
-    internal class Prestation
+    public class Prestation
     {
         // Méthodes
 

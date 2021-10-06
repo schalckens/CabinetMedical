@@ -17,7 +17,7 @@ namespace CabinetMedical.Exceptions
     /// </summary>
     internal class CabinetMedicalException : Exception
     {
-        private static string jsonLog;
+        // private static string jsonLog;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CabinetMedicalException"/> class.
