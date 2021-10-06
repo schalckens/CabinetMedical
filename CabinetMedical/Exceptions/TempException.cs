@@ -9,7 +9,7 @@ namespace CabinetMedical.Exceptions
     /// <summary>
     /// Classe TempExcepition qui hérite de la classe Exception.
     /// </summary>
-    internal class TempException : Exception
+    public class TempException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TempException"/> class.

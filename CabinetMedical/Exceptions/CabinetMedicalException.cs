@@ -15,7 +15,7 @@ namespace CabinetMedical.Exceptions
     /// <summary>
     /// Classe SoinException hérité de la classe Exception.
     /// </summary>
-    internal class CabinetMedicalException : Exception
+    public class CabinetMedicalException : Exception
     {
         // private static string jsonLog;
 
