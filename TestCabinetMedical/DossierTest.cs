@@ -32,7 +32,8 @@ namespace TestCabinetMedical
         public void TesteDatePrestationSuperieurOK() 
         {
             Intervenant intervenant1 = new Intervenant("Dupont", "Jean");
-            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation = new Cotation("3e", "nomenclature 1", 3);
+            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1, cotation);
             Dossier dossier = new Dossier("Robert", "Jean", new DateTime(1989, 12, 3), new DateTime(2013, 09, 15), prestation1);
             Assert.IsInstanceOfType(dossier, typeof(Dossier));
         }
@@ -43,7 +44,8 @@ namespace TestCabinetMedical
         {
             DateTime dateCreationDossier = DateTime.Now.AddDays(10);
             Intervenant intervenant1 = new Intervenant("Dupont", "Jean");
-            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation = new Cotation("3e", "nomenclature 1", 3);
+            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1, cotation);
             Dossier dossier = new Dossier("Robert", "Jean", new DateTime(1989, 12, 3), dateCreationDossier, prestation1);
         }
 
@@ -52,12 +54,14 @@ namespace TestCabinetMedical
         {
             List<Prestation> listePresta = new List<Prestation>();
             Intervenant intervenant1 = new Intervenant("Dupont", "Jean");
-            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation1 = new Cotation("3e", "nomenclature 1", 2);
+            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1, cotation1);
             IntervenantExterne intervenant2 = new IntervenantExterne("Duponti", "Jean-Claude", "Spécialité", "Rue 365 Addresse", "00.00.00.00.00");
-            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation2 = new Cotation("3b", "nomenclature 1", 3);
+            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant2, cotation2);
             listePresta.Add(prestation1);
             listePresta.Add(prestation2);
-            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), listePresta);
+            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), new DateTime(1990, 11, 12), listePresta);
             Assert.AreEqual(1, dossier.GetNbPrestationsExternes());
         }
 
@@ -66,26 +70,31 @@ namespace TestCabinetMedical
         {
             List<Prestation> listePresta = new List<Prestation>();
             Intervenant intervenant1 = new Intervenant("Dupont", "Jean");
-            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation1 = new Cotation("3e", "nomenclature 1", 2);
+            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1, cotation1);
             IntervenantExterne intervenant2 = new IntervenantExterne("Duponti", "Jean-Claude", "Spécialité", "Rue 365 Addresse", "00.00.00.00.00");
-            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation2 = new Cotation("3b", "nomenclature 1", 3);
+            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant2, cotation2);
             listePresta.Add(prestation1);
             listePresta.Add(prestation2);
-            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), listePresta);
+            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), new DateTime(1990, 11, 12), listePresta);
             Assert.AreEqual(2, dossier.GetNbJoursSoinsV1());
         }
 
+        /*
         [TestMethod]
         public void TesteNbJoursSoinsV2() 
         {
             List<Prestation> listePresta = new List<Prestation>();
             Intervenant intervenant1 = new Intervenant("Dupont", "Jean");
-            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation1 = new Cotation("3e", "nomenclature 1", 2);
+            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1, cotation1);
             IntervenantExterne intervenant2 = new IntervenantExterne("Duponti", "Jean-Claude", "Spécialité", "Rue 365 Addresse", "00.00.00.00.00");
-            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation2 = new Cotation("3b", "nomenclature 1", 3);
+            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant2, cotation2);
             listePresta.Add(prestation1);
             listePresta.Add(prestation2);
-            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), listePresta);
+            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), new DateTime(1990, 11, 12), listePresta);
             Assert.AreEqual(2, dossier.GetNbJoursSoinsV2());
         }
 
@@ -94,13 +103,16 @@ namespace TestCabinetMedical
         {
             List<Prestation> listePresta = new List<Prestation>();
             Intervenant intervenant1 = new Intervenant("Dupont", "Jean");
-            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation1 = new Cotation("3e", "nomenclature 1", 2);
+            Prestation prestation1 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1, cotation1);
             IntervenantExterne intervenant2 = new IntervenantExterne("Duponti", "Jean-Claude", "Spécialité", "Rue 365 Addresse", "00.00.00.00.00");
-            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant1);
+            Cotation cotation2 = new Cotation("3b", "nomenclature 1", 3);
+            Prestation prestation2 = new Prestation("P3", Convert.ToDateTime("10/09/2015 12:00:00"), intervenant2, cotation2);
             listePresta.Add(prestation1);
             listePresta.Add(prestation2);
-            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), listePresta);
+            Dossier dossier = new Dossier("Ducati", "Julio", new DateTime(1990, 11, 12), new DateTime(1990, 11, 12), listePresta);
             Assert.AreEqual(2, dossier.GetNbJoursSoinsV3());
         }
+        */
     }
 }

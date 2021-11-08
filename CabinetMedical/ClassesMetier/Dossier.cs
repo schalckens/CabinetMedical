@@ -107,6 +107,23 @@ namespace CabinetMedical.ClassesMetier
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Dossier"/> class.
+        /// </summary>
+        /// <param name="nom">Nom de la personne.</param>
+        /// <param name="prenom">Prenom de la personne.</param>
+        /// <param name="dateNaissance">Date de naissance de la personne.</param>
+        /// <param name="dateCreation">Date de creation du dossier.</param>
+        /// <param name="prestations">Liste d'objet de la classe Prestation.</param>
+        public Dossier(string nom, string prenom, DateTime dateNaissance, DateTime dateCreation, List<Prestation> prestations)
+            : this(nom, prenom, dateNaissance, dateCreation)
+        {
+            foreach (Prestation prestation in prestations)
+            {
+                this.AjoutePrestation(prestation);
+            }
+        }
+
         // Properties
 
         /// <summary>
@@ -143,7 +160,7 @@ namespace CabinetMedical.ClassesMetier
                 contenu += presta;
             }
 
-            return "-------------Début dossier ------------ \n" + "Nom : " + this.Nom + " Prenom : " + this.Prenom + " Date de naissance : " + this.dateNaissance + "\n\t" + contenu + "\n -------------Fin dossier --------------";
+            return "-------------Début dossier ------------ \n" + "Nom : " + this.Nom + " Prenom : " + this.Prenom + " Date de naissance : " + this.dateNaissance + "\n\t Prestation(s) : \t" + contenu + "\n -------------Fin dossier --------------";
         }
 
         /// <summary>
@@ -202,7 +219,7 @@ namespace CabinetMedical.ClassesMetier
             {
                 for (int j = i + 1; j < this.prestations.Count; j++)
                 {
-                    if (Prestation.CompareTo(this.prestations[i], this.prestations[j]) == 0)
+                    if (Prestation.CompareTo(this.prestations[i], this.prestations[j]) < 0)
                     {
                         nb--;
                     }
@@ -211,7 +228,7 @@ namespace CabinetMedical.ClassesMetier
 
             return nb;
         }
-
+        /*
         /// <summary>
         /// Deuxième méthode pour obtenir le nb de jours de prestation.
         /// Ajout dans une liste viste si pas déjà présente.
@@ -222,15 +239,22 @@ namespace CabinetMedical.ClassesMetier
             List<DateTime> dates = new List<DateTime>();
             foreach (Prestation presta in this.prestations)
             {
-                if (!dates.Contains(presta.DateHeureSoin.Date))
+                int i = 0;
+                while (!(dates[i].Date == presta.DateHeureSoin.Date) && i < this.prestations.Count)
                 {
-                    dates.Add(presta.DateHeureSoin.Date);
+                    i++;
+                }
+
+                if (!(i < this.prestations.Count))
+                {
+                    dates.Add(presta.DateHeureSoin);
                 }
             }
 
             return dates.Count;
         }
-
+        */
+        /*
         /// <summary>
         /// Troisième méthode pour obtenir le nb de jours de prestation.
         /// Ajout dans une liste viste si pas déjà présente.
@@ -255,5 +279,6 @@ namespace CabinetMedical.ClassesMetier
 
             return cpt + 1;
         }
+        */
     }
 }

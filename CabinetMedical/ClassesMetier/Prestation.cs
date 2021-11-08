@@ -12,6 +12,10 @@ namespace CabinetMedical.ClassesMetier
     /// </summary>
     public class Prestation
     {
+        private int prixFixe = 100;
+        private int prixCourant;
+        private Cotation cotation;
+
         // Méthodes
 
         /// <summary>
@@ -20,7 +24,8 @@ namespace CabinetMedical.ClassesMetier
         /// <param name="libelle">Libéllé.</param>
         /// <param name="dateHeureSoin">Date et heure de la prestation.</param>
         /// <param name="intervenant">Objet de la classe Intervenant.</param>
-        public Prestation(string libelle, DateTime dateHeureSoin, Intervenant intervenant)
+        /// <param name="cotation">Objet de la classe Cotation.</param>
+        public Prestation(string libelle, DateTime dateHeureSoin, Intervenant intervenant, Cotation cotation)
         {
             this.Libelle = libelle;
             if (DateTime.Compare(DateTime.Now.Date, dateHeureSoin.Date) >= 0)
@@ -33,6 +38,8 @@ namespace CabinetMedical.ClassesMetier
             }
 
             this.Intervenant = intervenant;
+            this.cotation = cotation;
+            this.prixCourant = cotation.Indice * this.prixCourant;
         }
 
         // Properties
@@ -46,6 +53,21 @@ namespace CabinetMedical.ClassesMetier
         /// Gets.
         /// </summary>
         public DateTime DateHeureSoin { get; }
+
+        /// <summary>
+        /// Gets or Sets prixFixe.
+        /// </summary>
+        public int PrixFixe { get => this.prixFixe; set => this.prixFixe = value; }
+
+        /// <summary>
+        /// Gets or Sets prixCourant.
+        /// </summary>
+        public int PrixCourant { get => this.prixCourant; set => this.prixCourant = value; }
+
+        /// <summary>
+        /// Gets or Sets cotation.
+        /// </summary>
+        public Cotation Cotation { get => this.cotation; set => this.cotation = value; }
 
         /// <summary>
         /// Gets.
@@ -66,7 +88,7 @@ namespace CabinetMedical.ClassesMetier
         /// <inheritdoc/>
         public override string ToString()
         {
-            return "Libelle " + this.Libelle + " - " + this.DateHeureSoin + " - " + this.Intervenant + "\n\t";
+            return "Libelle " + this.Libelle + " - " + this.DateHeureSoin + " - " + this.Intervenant + " - " + this.PrixCourant + "€ \n\t";
         }
     }
 }

@@ -4,6 +4,35 @@
         <name>CabinetMedical</name>
     </assembly>
     <members>
+        <member name="T:CabinetMedical.ClassesMetier.Cotation">
+            <summary>
+            Classe Cotation.
+            </summary>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Cotation.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Cotation"/> class.
+            Constructeur de la Classe Cotation.
+            </summary>
+            <param name="id"> id de la cotation. </param>
+            <param name="libelle">l libellé de la cotation. </param>
+            <param name="indice"> indice de cotation. </param>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Cotation.Id">
+            <summary>
+            Gets id.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Cotation.Libelle">
+            <summary>
+            Gets or Sets libelle.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Cotation.Indice">
+            <summary>
+            Gets or Sets indice.
+            </summary>
+        </member>
         <member name="T:CabinetMedical.ClassesMetier.Dossier">
             <summary>
             Classe Dossier.
@@ -53,6 +82,16 @@
             <param name="prenom">Prenom de la personne.</param>
             <param name="dateNaissance">Date de naissance de la personne.</param>
             <param name="prestations">Objet de la classe Prestation.</param>
+        </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.#ctor(System.String,System.String,System.DateTime,System.DateTime,System.Collections.Generic.List{CabinetMedical.ClassesMetier.Prestation})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Dossier"/> class.
+            </summary>
+            <param name="nom">Nom de la personne.</param>
+            <param name="prenom">Prenom de la personne.</param>
+            <param name="dateNaissance">Date de naissance de la personne.</param>
+            <param name="dateCreation">Date de creation du dossier.</param>
+            <param name="prestations">Liste d'objet de la classe Prestation.</param>
         </member>
         <member name="P:CabinetMedical.ClassesMetier.Dossier.Nom">
             <summary>
@@ -104,20 +143,6 @@
             <summary>
             Première méthode pour obtenir le nb de jours de prestation.
             Méthode double boucle.
-            </summary>
-            <returns>Nb jour soins.</returns>
-        </member>
-        <member name="M:CabinetMedical.ClassesMetier.Dossier.GetNbJoursSoinsV2">
-            <summary>
-            Deuxième méthode pour obtenir le nb de jours de prestation.
-            Ajout dans une liste viste si pas déjà présente.
-            </summary>
-            <returns>Nb jour soins.</returns>
-        </member>
-        <member name="M:CabinetMedical.ClassesMetier.Dossier.GetNbJoursSoinsV3">
-            <summary>
-            Troisième méthode pour obtenir le nb de jours de prestation.
-            Ajout dans une liste viste si pas déjà présente.
             </summary>
             <returns>Nb jour soins.</returns>
         </member>
@@ -196,13 +221,14 @@
             Classe Prestation.
             </summary>
         </member>
-        <member name="M:CabinetMedical.ClassesMetier.Prestation.#ctor(System.String,System.DateTime,CabinetMedical.ClassesMetier.Intervenant)">
+        <member name="M:CabinetMedical.ClassesMetier.Prestation.#ctor(System.String,System.DateTime,CabinetMedical.ClassesMetier.Intervenant,CabinetMedical.ClassesMetier.Cotation)">
             <summary>
             Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Prestation"/> class.
             </summary>
             <param name="libelle">Libéllé.</param>
             <param name="dateHeureSoin">Date et heure de la prestation.</param>
             <param name="intervenant">Objet de la classe Intervenant.</param>
+            <param name="cotation">Objet de la classe Cotation.</param>
         </member>
         <member name="P:CabinetMedical.ClassesMetier.Prestation.Libelle">
             <summary>
@@ -212,6 +238,21 @@
         <member name="P:CabinetMedical.ClassesMetier.Prestation.DateHeureSoin">
             <summary>
             Gets.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Prestation.PrixFixe">
+            <summary>
+            Gets or Sets prixFixe.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Prestation.PrixCourant">
+            <summary>
+            Gets or Sets prixCourant.
+            </summary>
+        </member>
+        <member name="P:CabinetMedical.ClassesMetier.Prestation.Cotation">
+            <summary>
+            Gets or Sets cotation.
             </summary>
         </member>
         <member name="P:CabinetMedical.ClassesMetier.Prestation.Intervenant">
