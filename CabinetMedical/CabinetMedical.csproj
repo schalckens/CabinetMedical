@@ -2,10 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description>Cette bibliothèque propose un large éventail de fonctionnalités dans le cadre de la gestion d'un cabinet médical.</Description>
+    <Copyright>Valentine Schalckens</Copyright>
+    <Authors>Valentine Schalckens</Authors>
+    <RepositoryUrl>https://github.com/schalckens/CabinetMedical</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageId>Schalckens.CabinetMedical</PackageId>
+    <PackageTags>Gestion, Cabinet, Cabinet Medical</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>E:\Roche\TP C# 2a\CabinetMedical\CabinetMedical\CabinetMedical.xml</DocumentationFile>
+    <DocumentationFile>D:/Projet_2021_2022/CabinetMedical/CabinetMedical/CabinetMedical.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

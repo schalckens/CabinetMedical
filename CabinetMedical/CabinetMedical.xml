@@ -35,6 +35,16 @@
             <param name="dateNaissance">Date de naissance de la personne.</param>
             <param name="prestation">Objet de la classe Prestation.</param>
         </member>
+        <member name="M:CabinetMedical.ClassesMetier.Dossier.#ctor(System.String,System.String,System.DateTime,System.DateTime,CabinetMedical.ClassesMetier.Prestation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Dossier"/> class.
+            </summary>
+            <param name="nom">Nom de la personne.</param>
+            <param name="prenom">Prenom de la personne.</param>
+            <param name="dateNaissance">Date de naissance de la personne.</param>
+            <param name="dateCreation">Date de creation du dossier.</param>
+            <param name="prestation">Objet de la classe Prestation.</param>
+        </member>
         <member name="M:CabinetMedical.ClassesMetier.Dossier.#ctor(System.String,System.String,System.DateTime,System.Collections.Generic.List{CabinetMedical.ClassesMetier.Prestation})">
             <summary>
             Initializes a new instance of the <see cref="T:CabinetMedical.ClassesMetier.Dossier"/> class.
