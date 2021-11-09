@@ -39,7 +39,7 @@ namespace CabinetMedical.ClassesMetier
 
             this.Intervenant = intervenant;
             this.cotation = cotation;
-            this.prixCourant = cotation.Indice * this.prixCourant;
+            this.prixCourant = cotation.Indice * this.prixFixe;
         }
 
         // Properties
